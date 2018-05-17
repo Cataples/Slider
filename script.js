@@ -1,22 +1,26 @@
-let container = document.getElementsByClassName("viewport")[0]; 
-let rightBtn = document.getElementsByClassName("rightButton")[0];
-let leftBtn = document.getElementsByClassName("leftButton")[0];
-let imgsContainer = document.getElementsByClassName("image-container")[0];
+const container = document.getElementsByClassName("viewport")[0]; 
+const rightBtn = document.getElementsByClassName("rightButton")[0];
+const leftBtn = document.getElementsByClassName("leftButton")[0];
+const imgsContainer = document.getElementsByClassName("image-container")[0];
 imgsContainer.style.left = "0px";
 imgsContainer.style.transition = "all 1s";
 
-rightBtn.addEventListener("click", function(){
-    let oldLeft = imgsContainer.style.left.split("px")[0];
+rightBtn.addEventListener("click", rigltClick);
+
+function rigltClick() {
+    const oldLeft = imgsContainer.style.left.split("px")[0];
 
     if(oldLeft == -3600) {
         imgsContainer.style.left = "0px"
     } else {
         imgsContainer.style.left = (parseInt(oldLeft) - 900) + "px";
     }
-})
+}
 
-leftBtn.addEventListener("click", function(){
-    let oldLeft = imgsContainer.style.left.split("px")[0];
+leftBtn.addEventListener("click", leftClick);
+
+function leftClick() {
+    const oldLeft = imgsContainer.style.left.split("px")[0];
 
     if(oldLeft == 0) {
         imgsContainer.style.transition = "all 1s";
@@ -24,6 +28,5 @@ leftBtn.addEventListener("click", function(){
     } else {
         imgsContainer.style.left = (parseInt(oldLeft) + 900) + "px";
     }
-})
 
-
+}
