@@ -6,6 +6,7 @@ imgsContainer.style.left = "0px";
 imgsContainer.style.transition = "all 1s";
 
 rightBtn.addEventListener("click", rigltClick);
+leftBtn.addEventListener("click", leftClick);
 
 function rigltClick() {
     const oldLeft = imgsContainer.style.left.split("px")[0];
@@ -16,8 +17,6 @@ function rigltClick() {
         imgsContainer.style.left = (parseInt(oldLeft) - 900) + "px";
     }
 }
-
-leftBtn.addEventListener("click", leftClick);
 
 function leftClick() {
     const oldLeft = imgsContainer.style.left.split("px")[0];
